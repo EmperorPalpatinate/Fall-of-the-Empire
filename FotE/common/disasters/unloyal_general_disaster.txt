@@ -21,7 +21,7 @@ unloyal_general_disaster = {
 			had_recent_war = 2
 			NOT = { manpower_percentage = 0.40 }
 			has_leader_with = {
-				total_pips = 14
+				total_pips = 10
 			}
 			war_exhaustion = 5
 		}
@@ -75,7 +75,7 @@ unloyal_general_disaster = {
 	
 	can_end = {
 		OR = {
-			NOt = { war_exhaustion = 5 }
+			NOT = { war_exhaustion = 2 }
 		}
 	}
 	
@@ -92,7 +92,7 @@ unloyal_general_disaster = {
 	
 	
 	on_start = unloyal_general.1
-	on_end = civil_war.100
+	on_end = english_civil_war.100
 	
 	on_monthly = {
 		events = {

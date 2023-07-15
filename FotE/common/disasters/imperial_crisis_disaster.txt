@@ -17,34 +17,54 @@ imperial_crisis_disaster = {
 			is_overseas = no
 		}
 		OR = {
+			AND = {
+				tag = MNG
+				NOT = {
+					imperial_mandate = 30
+				}
+				NOT = { stability = -1 }
+			}
+			NOT = {
+				tag = MNG
+			}
+		}
+		OR = {
 			NOT = {	stability = -1 }
 			NOT = { legitimacy_equivalent = 30 }
 			NOT = { dip = 2 }
 			NOT = { adm = 2 }
 			NOT = { mil = 2 }
 			overextension_percentage = 0.60
-			average_unrest = 8
 			corruption = 8
 			num_of_loans = 16
 			is_bankrupt = yes
 			inflation = 12
 			war_exhaustion = 12
+			unrest = 4
 		}
 	}
 	
 	
 	can_stop = {
-		AND = {
-			stability = 1
-			legitimacy_equivalent = 50
-			dip = 1
-			adm = 1
-			mil = 1
-			NOT = { corruption = 5 }
-			NOT = { num_of_loans = 20 }
-			NOT = { is_bankrupt = yes }
-			NOT = { inflation = 10 }
-			NOT = { war_exhaustion = 6 }
+		stability = 1
+		legitimacy_equivalent = 50
+		dip = 2
+		adm = 2
+		mil = 2
+		NOT = { corruption = 5 }
+		NOT = { num_of_loans = 20 }
+		NOT = { is_bankrupt = yes }
+		NOT = { inflation = 10 }
+		NOT = { war_exhaustion = 6 }
+		NOT = { unrest = 4 }
+		OR = {
+			AND = {
+				tag = MNG
+				imperial_mandate = 30
+			}
+			NOT = {
+				tag = MNG
+			}
 		}
 	}	
 	
@@ -154,21 +174,26 @@ imperial_crisis_disaster = {
 	
 	
 	can_end = {
-		stability = 2
-		legitimacy_equivalent = 70
-		NOT = { war_exhaustion = 2 }
-		is_bankrupt = no
-		NOT = { num_of_loans = 10 }
+		stability = 1
+		legitimacy_equivalent = 50
+		dip = 2
+		adm = 2
+		mil = 2
+		NOT = { corruption = 5 }
+		NOT = { num_of_loans = 20 }
+		NOT = { is_bankrupt = yes }
 		NOT = { inflation = 10 }
+		NOT = { war_exhaustion = 6 }
+		NOT = { unrest = 4 }
 	}
 	
 
 	modifier = {
-		global_unrest = 5
-		discipline = -0.20
+		global_unrest = 4
+		discipline = -0.10
 		army_morale = -0.20
 		global_tax_modifier = -0.40
-		technology_cost = 0.20
+		technology_cost = 0.10
 		all_power_costs = 0.10
 		yearly_corruption = 0.25
 		stability_cost_modifier = 2.00
@@ -176,7 +201,7 @@ imperial_crisis_disaster = {
 	}	
 	
 	
-	on_start = civil_war.1
+	on_start = civil_war.101
 	on_end = civil_war.100
 	
 	on_monthly = {
@@ -186,188 +211,18 @@ imperial_crisis_disaster = {
 			flavor_lxa.3
 		}
 		random_events = { 
-			1000 = 0
-			100 = civil_war.2
-			100 = civil_war.3
+			100 = imperial_disaster.1
+			100 = civil_war.111
+			100 = civil_war.113
+			100 = civil_war.122
+			100 = civil_war.123
 			100 = civil_war.5
-			100 = civil_war.6
+			100 = civil_war.116
 			100 = civil_war.7
-			100 = civil_war.8
+			100 = civil_war.118
 			100 = civil_war.9
 			100 = civil_war.10
-			100 = civil_war.11
 			100 = civil_war.12
-			100 = civil_war.13
-			10 = imperial_revolt.1
-			10 = imperial_revolt.2
-			10 = imperial_revolt.3
-			10 = imperial_revolt.4
-			10 = imperial_revolt.5
-			10 = imperial_revolt.6
-			10 = imperial_revolt.7
-			10 = imperial_revolt.8
-			10 = imperial_revolt.9
-			10 = imperial_revolt.10
-			10 = imperial_revolt.11
-			10 = imperial_revolt.12
-			10 = imperial_revolt.13
-			10 = imperial_revolt.14
-			10 = imperial_revolt.15
-			10 = imperial_revolt.16
-			10 = imperial_revolt.17
-			10 = imperial_revolt.18
-			10 = imperial_revolt.19
-			10 = imperial_revolt.20
-			10 = imperial_revolt.21
-			10 = imperial_revolt.22
-			10 = imperial_revolt.23
-			10 = imperial_revolt.24
-			10 = imperial_revolt.25
-			10 = imperial_revolt.26
-			10 = imperial_revolt.27
-			10 = imperial_revolt.28
-			10 = imperial_revolt.29
-			10 = imperial_revolt.30
-			10 = imperial_revolt.31
-			10 = imperial_revolt.32
-			10 = imperial_revolt.33
-			10 = imperial_revolt.34
-			10 = imperial_revolt.35
-			10 = imperial_revolt.36
-			10 = imperial_revolt.37
-			10 = imperial_revolt.38
-			10 = imperial_revolt.39
-			10 = imperial_revolt.40
-			10 = imperial_revolt.41
-			10 = imperial_revolt.42
-			10 = imperial_revolt.43
-			10 = imperial_revolt.44
-			10 = imperial_revolt.45
-			10 = imperial_revolt.46
-			10 = imperial_revolt.47
-			10 = imperial_revolt.48
-			10 = imperial_revolt.49
-			10 = imperial_revolt.50
-			10 = imperial_revolt.51
-			10 = imperial_revolt.52
-			10 = imperial_revolt.53
-			10 = imperial_revolt.54
-			10 = imperial_revolt.55
-			10 = imperial_revolt.56
-			10 = imperial_revolt.57
-			10 = imperial_revolt.58
-			10 = imperial_revolt.59
-			10 = imperial_revolt.60
-			10 = imperial_revolt.61
-			10 = imperial_revolt.62
-			10 = imperial_revolt.63
-			10 = imperial_revolt.64
-			10 = imperial_revolt.65
-			10 = imperial_revolt.66
-			10 = imperial_revolt.67
-			10 = imperial_revolt.68
-			10 = imperial_revolt.69
-			10 = imperial_revolt.70
-			10 = imperial_revolt.71
-			10 = imperial_revolt.72
-			10 = imperial_revolt.73
-			10 = imperial_revolt.74
-			10 = imperial_revolt.75
-			10 = imperial_revolt.76
-			10 = imperial_revolt.77
-			10 = imperial_revolt.78
-			10 = imperial_revolt.79
-			10 = imperial_revolt.80
-			10 = imperial_revolt.81
-			10 = imperial_revolt.82
-			10 = imperial_revolt.83
-			10 = imperial_revolt.84
-			10 = imperial_revolt.85
-			10 = imperial_revolt.86
-			10 = imperial_revolt.87
-			10 = imperial_revolt.88
-			10 = imperial_revolt.89
-			10 = imperial_revolt.90
-			10 = imperial_revolt.91
-			10 = imperial_revolt.92
-			10 = imperial_revolt.93
-			10 = imperial_revolt.94
-			10 = imperial_revolt.95
-			10 = imperial_revolt.96
-			10 = imperial_revolt.97
-			10 = imperial_revolt.98
-			10 = imperial_revolt.99
-			10 = imperial_revolt.100
-			10 = imperial_revolt.101
-			10 = imperial_revolt.102
-			10 = imperial_revolt.103
-			10 = imperial_revolt.104
-			10 = imperial_revolt.105
-			10 = imperial_revolt.106
-			10 = imperial_revolt.107
-			10 = imperial_revolt.108
-			10 = imperial_revolt.109
-			10 = imperial_revolt.110
-			10 = imperial_revolt.111
-			10 = imperial_revolt.112
-			10 = imperial_revolt.113
-			10 = imperial_revolt.114
-			10 = imperial_revolt.115
-			10 = imperial_revolt.116
-			10 = imperial_revolt.117
-			10 = imperial_revolt.118
-			10 = imperial_revolt.119
-			10 = imperial_revolt.120
-			10 = imperial_revolt.121
-			10 = imperial_revolt.122
-			10 = imperial_revolt.123
-			10 = imperial_revolt.124
-			10 = imperial_revolt.125
-			10 = imperial_revolt.126
-			10 = imperial_revolt.127
-			10 = imperial_revolt.128
-			10 = imperial_revolt.129
-			10 = imperial_revolt.130
-			10 = imperial_revolt.131
-			10 = imperial_revolt.132
-			10 = imperial_revolt.133
-			10 = imperial_revolt.134
-			10 = imperial_revolt.135
-			10 = imperial_revolt.136
-			10 = imperial_revolt.137
-			10 = imperial_revolt.138
-			10 = imperial_revolt.139
-			10 = imperial_revolt.140
-			10 = imperial_revolt.141
-			10 = imperial_revolt.142
-			10 = imperial_revolt.143
-			10 = imperial_revolt.144
-			10 = imperial_revolt.145
-			10 = imperial_revolt.146
-			10 = imperial_revolt.147
-			10 = imperial_revolt.148
-			10 = imperial_revolt.149
-			10 = imperial_revolt.150
-			10 = imperial_revolt.151
-			10 = imperial_revolt.152
-			10 = imperial_revolt.153
-			10 = imperial_revolt.154
-			10 = imperial_revolt.155
-			10 = imperial_revolt.156
-			10 = imperial_revolt.157
-			10 = imperial_revolt.158
-			10 = imperial_revolt.159
-			10 = imperial_revolt.160
-			10 = imperial_revolt.161
-			10 = imperial_revolt.162
-			10 = imperial_revolt.163
-			10 = imperial_revolt.164
-			10 = imperial_revolt.165
-			10 = imperial_revolt.166
-			10 = imperial_revolt.167
-			10 = imperial_revolt.168
-			10 = imperial_revolt.169
-			10 = imperial_revolt.170
 		}
 	}
 }
